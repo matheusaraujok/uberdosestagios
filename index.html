@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Estágios</title>
+    <link rel="icon" type="image/png" href="default.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f7ed;
+        }
+        /* Barra de Atendimento */
+        .top-bar {
+            background-color: #f9fabf; /* Verde claro */
+            padding: 10px;
+            text-align: right;
+        }
+        .top-bar span {
+            font-size: 14px;
+            color: #000;
+        }
+        /* Cabeçalho */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .logo-container {
+            width: 109px;
+            height: 108px;
+            background-color: #ccc;
+            border-radius: 10px; /* Cantos arredondados */
+            overflow: hidden;
+        }
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        /* Carrossel de Imagens */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel .text-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .carousel-buttons button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        /* Seção Contratação */
+        .contratacao {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .contratacao button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        /* Botões com Destaque */
+        .botao-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .botao-container button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        .botao-estudante {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .botao-empresa {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .botao-instituicao {
+            background-color: #ffc107;
+            color: #fff;
+        }
+        .botao-container button:hover {
+            opacity: 0.8;
+        }
+        /* Seção 3 Passos */
+        .passos-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .passos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .passo {
+            width: 30%;
+            text-align: center;
+        }
+        .passo img {
+            width: 80%; /* Ajuste do tamanho das imagens */
+            height: auto;
+            border-radius: 10px; /* Cantos arredondados */
+        }
+        .passo h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        /* Seção Acreditamos */
+        .acreditamos {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .acreditamos p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .acreditamos button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        /* Vantagens com Ícones */
+        .vantagens {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 40px 0;
+        }
+        .vantagem {
+            text-align: center;
+        }
+        .vantagem i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .vantagem p {
+            font-size: 16px;
+        }
+        /* Seção Serviços para Empresas */
+        .servicos-empresas {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 40px 0;
+        }
+        .servico {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+            border-radius: 10px; /* Cantos arredondados */
+        }
+        .servico img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Cantos arredondados */
+        }
+        .servico h4 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <span>Central de Atendimento: (61) 3356-7275</span>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo-container">
+           <a href="index.html" ><img src="default.png" alt="Logo"> </a>
+        </div>
+        <nav class="menu">
+            <a href="#">Conheça o portal Uber dos estágios</a>
+            <a href="home.html">Sou estudante</a>
+            <a href="#">Sou empresa</a>
+            <a href="#">Sou instituição de ensino</a>
+            <a href="#">Fale conosco</a>
+        </nav>
+    </header>
+
+ <!-- Carrossel de Imagens -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="https://www.cio.com/wp-content/uploads/2023/12/shutterstock_2394640901.jpg?quality=50&strip=all&w=1024" alt="Imagem 1">
+        <img src="https://img.freepik.com/fotos-gratis/vista-aerea-do-grafico-de-analise-de-dados-de-negocios_53876-146152.jpg" alt="Imagem 2">
+        <img src="https://www.shutterstock.com/image-photo/happy-middle-aged-business-man-600nw-2306186897.jpg" alt="Imagem 3">
+        <img src="https://watermark.lovepik.com/photo/20220316/large/lovepik-professional-business-woman-office-picture_502367516.jpg" alt="Imagem 4">
+    </div>
+    <div class="carousel-buttons">
+        <button id="prev-btn">&lt;</button>
+        <button id="next-btn">&gt;</button>
+    </div>
+    <div class="text-overlay">Bem-vindo ao melhor portal de estágio</div>
+</div>
+
+<style>
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 400px; /* Garante que o espaço ocupado pela imagem não seja alterado */
+        background-color: #ddd;
+        overflow: hidden;
+    }
+    .carousel-images {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .carousel-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        flex: 0 0 100%;
+        display: block;
+    }
+    .carousel-buttons {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+    .carousel-buttons button {
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .text-overlay {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 24px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll(".carousel-images img");
+        const carouselImages = document.querySelector(".carousel-images");
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const offset = -index * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        document.getElementById("next-btn").addEventListener("click", nextImage);
+        document.getElementById("prev-btn").addEventListener("click", prevImage);
+
+        // Auto-play images
+        setInterval(nextImage, 5000); // Troca de imagem a cada 5 segundos
+
+        // Inicializa a primeira imagem
+        showImage(currentIndex);
+    });
+</script>
+
+
+    <!-- Seção Contratação -->
+    <div class="contratacao">
+        <h2>Contratação de estagiários simples e segura</h2>
+        <button>Quero contratar</button>
+    </div>
+
+    <!-- Botões Flutuantes -->
+    <div class="botao-container">
+        <a href="home.html"><button class="botao-estudante">Sou estudante</button></a>
+        <button class="botao-empresa">Sou empresa</button>
+        <button class="botao-instituicao">Sou instituição de ensino</button>
+    </div>
+
+    <!-- 3 Passos -->
+    <div class="passos-container">
+        <h2>3 passos rumo ao mercado de trabalho</h2>
+        <div class="passos">
+            <div class="passo">
+                <img src="https://static.wixstatic.com/media/024d54_577d0d5b5e8c455e910a28c085f5a8f0~mv2.png/v1/fill/w_315,h_315,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CADASTRE-SE.png" alt="Passo 1">
+                <h3>Passo 1: Faça o seu cadastro</h3>
+                <p>Cadastre o seu currículo, mantenha o seu cadastro sempre atualizado.</p>
+            </div>
+            <div class="passo">
+                <img src="https://static.wixstatic.com/media/024d54_be234853678c4e949b66944ab1e15551~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/PROCURE.png" alt="Passo 2">
+                <h3>Passo 2: Busque vagas</h3>
+                <p>Busque oportunidades disponíveis para você. Todos os dias temos novas vagas.</p>
+            </div>
+            <div class="passo">
+                <img src="https://static.wixstatic.com/media/024d54_e26db42b272945cb9feb1eda3fb64baa~mv2.png/v1/fill/w_279,h_279,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ENTREVISTA.png" alt="Passo 3">
+                <h3>Passo 3: Marque uma entrevista</h3>
+                <p>Selecione a vaga de seu interesse e marque a entrevista através do Whatsapp ou telefone.</p>
+            </div>
+        </div>
+    </div>
+    <html></html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-white">
+  <!-- Section 1 -->
+  <div class="flex flex-col items-center justify-center py-12 bg-white">
+   <div class="flex items-center justify-center">
+    <img alt="Illustration of people using a large smartphone" class="w-1/2" height="300" src="https://static.wixstatic.com/media/024d54_20f8582875454b468e83e2dd5de195f6~mv2.png/v1/fill/w_428,h_428,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Chat-rafiki.png" width="300"/>
+    <div class="ml-8">
+     <h1 class="text-3xl font-bold text-gray-800">
+      Seja o primeiro a saber
+     </h1>
+     <p class="mt-4 text-gray-600">
+      Entre em um grupo do whatsapp e receba diariamente as oportunidades disponíveis.
+      <br/>
+      Vagas de estágio na palma da sua mão, só no Uber dos Estágios!
+     </p>
+     <button class="mt-6 px-6 py-3 bg-green-600 text-white font-bold rounded-full">
+      Entrar no grupo do whatsapp
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Section 2 -->
+  <div class="bg-green-700 py-12">
+   <h2 class="text-center text-3xl font-bold text-white mb-8">
+    SERVIÇOS PARA EMPRESAS
+   </h2>
+   <div class="flex justify-center space-x-4">
+    <div class="bg-green-800 text-white p-8 w-1/4 text-center">
+     <p class="text-4xl font-bold">
+      +10
+     </p>
+     <p class="text-2xl">
+      anos
+     </p>
+     <p class="text-xl">
+      de mercado
+     </p>
+    </div>
+    <div class="relative bg-cover bg-center w-1/4" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWNF7BVSwwygreRI3UUjoxt_V1Q1BAIPRXEQ&s');">
+     <div class="absolute inset-0 bg-black opacity-50">
+     </div>
+     <div class="relative z-10 text-white p-8">
+      <p class="text-2xl font-bold">
+       Encontre e recrute os melhores talentos
+      </p>
+     </div>
+    </div>
+    <div class="bg-green-800 text-white p-8 w-1/4 text-center">
+     <p class="text-4xl font-bold">
+      +2000
+     </p>
+     <p class="text-2xl">
+      vagas abertas
+     </p>
+     <p class="text-xl">
+      por ano
+     </p>
+    </div>
+    <div class="relative bg-cover bg-center w-1/4" style="background-image: url('data:image/jpeg;base64,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');">
+     <div class="absolute inset-0 bg-black opacity-50">
+     </div>
+     <div class="relative z-10 text-white p-8">
+      <p class="text-2xl font-bold">
+       Emissão e administração de contratos
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+
+    <!-- Seção Acreditamos -->
+    <div class="acreditamos">
+        <p>Acreditamos que o estágio é muito mais do que uma simples passagem do estudante para a empresa.</p>
+        <a href="home.html"><button>Quero me cadastrar</button></a>
+    </div>
+
+    <!-- Vantagens -->
+    <div class="vantagens">
+        <div class="vantagem">
+            <i>$</i>
+            <p>Vagas remuneradas</p>
+        </div>
+        <div class="vantagem">
+            <i>👤</i>
+            <p>Cadastro gratuito</p>
+        </div>
+        <div class="vantagem">
+            <i>💬</i>
+            <p>Grupo de vagas</p>
+        </div>
+        <div class="vantagem">
+            <i>⏲</i>
+            <p>Novas vagas todos os dias</p>
+        </div>
+        <div class="vantagem">
+            <i>💻</i>
+            <p>Atendimento por chat</p>
+        </div>
+    </div>
+
+    <!-- JavaScript para Carrossel -->
+    <script>
+        const carouselImages = [
+            'https://blog.unifacsonline.com.br/wp-content/uploads/2022/04/cursos-na-area-da-educacao.jpeg',
+            // Adicione mais URLs de imagens aqui
+        ];
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const imgElement = document.querySelector('.carousel img');
+            imgElement.src = carouselImages[currentIndex];
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+            updateCarousel();
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            updateCarousel();
+        });
+
+        // Inicializar o carrossel com a primeira imagem
+        updateCarousel();
+    </script>
+</body>
+</html>

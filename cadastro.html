@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Aluno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c58bb4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+        .form-container img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #944687;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #944687;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #337ab7;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header removed -->
+
+        <div class="form-container">
+           <a href="index.html"><img src="default.png" alt="Logo Placeholder"> </a>
+            <h1>Página do Aluno</h1>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit" class="button">ENTRAR</button>
+            </form>
+            <a href="#" class="link">Esqueci minha senha</a>
+            <div class="footer">
+                <a href="#" class="link">Não sou cadastrado</a>
+            </div>
+        </div>
+
+
+</body>
+</html>
